@@ -1,4 +1,12 @@
+import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
+import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.jcas.JCas;
+public class HMMAnnotator extends JCasAnnotator_ImplBase{
 
-public class HMMAnnotator {
+	@Override
+	public void process(JCas aJCas) throws AnalysisEngineProcessException {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
