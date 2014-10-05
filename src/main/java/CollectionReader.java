@@ -9,7 +9,10 @@ import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.Progress;
 
 public class CollectionReader extends CollectionReader_ImplBase {
-
+	private File inputfile;
+	
+	private boolean isFirst = true;
+	
 	@Override
 	public void getNext(CAS aCAS) throws IOException, CollectionException {
 		// TODO Auto-generated method stub
