@@ -10,7 +10,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Sat Oct 04 17:21:21 EDT 2014
+ * Updated by JCasGen Mon Oct 06 23:27:10 EDT 2014
  * XML source: /Users/laceyliu/Documents/workspace/hw2-xiliu1/src/main/resources/descriptors/typeSystemDescriptor.xml
  * @generated */
 public class Gene extends Annotation {
@@ -126,19 +126,19 @@ public class Gene extends Annotation {
    * @generated
    * @return value of the feature 
    */
-  public float getConfidence() {
+  public double getConfidence() {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_Confidence == null)
       jcasType.jcas.throwFeatMissing("Confidence", "Gene");
-    return jcasType.ll_cas.ll_getFloatValue(addr, ((Gene_Type)jcasType).casFeatCode_Confidence);}
+    return jcasType.ll_cas.ll_getDoubleValue(addr, ((Gene_Type)jcasType).casFeatCode_Confidence);}
     
   /** setter for Confidence - sets  
    * @generated
    * @param v value to set into the feature 
    */
-  public void setConfidence(float v) {
+  public void setConfidence(double v) {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_Confidence == null)
       jcasType.jcas.throwFeatMissing("Confidence", "Gene");
-    jcasType.ll_cas.ll_setFloatValue(addr, ((Gene_Type)jcasType).casFeatCode_Confidence, v);}    
+    jcasType.ll_cas.ll_setDoubleValue(addr, ((Gene_Type)jcasType).casFeatCode_Confidence, v);}    
   }
 
     

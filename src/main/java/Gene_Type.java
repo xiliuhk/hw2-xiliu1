@@ -13,7 +13,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Sat Oct 04 17:21:21 EDT 2014
+ * Updated by JCasGen Mon Oct 06 23:27:10 EDT 2014
  * @generated */
 public class Gene_Type extends Annotation_Type {
   /** @generated 
@@ -101,19 +101,19 @@ public class Gene_Type extends Annotation_Type {
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public float getConfidence(int addr) {
+  public double getConfidence(int addr) {
         if (featOkTst && casFeat_Confidence == null)
       jcas.throwFeatMissing("Confidence", "Gene");
-    return ll_cas.ll_getFloatValue(addr, casFeatCode_Confidence);
+    return ll_cas.ll_getDoubleValue(addr, casFeatCode_Confidence);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setConfidence(int addr, float v) {
+  public void setConfidence(int addr, double v) {
         if (featOkTst && casFeat_Confidence == null)
       jcas.throwFeatMissing("Confidence", "Gene");
-    ll_cas.ll_setFloatValue(addr, casFeatCode_Confidence, v);}
+    ll_cas.ll_setDoubleValue(addr, casFeatCode_Confidence, v);}
     
   
 
@@ -137,7 +137,7 @@ public class Gene_Type extends Annotation_Type {
     casFeatCode_Content  = (null == casFeat_Content) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Content).getCode();
 
  
-    casFeat_Confidence = jcas.getRequiredFeatureDE(casType, "Confidence", "uima.cas.Float", featOkTst);
+    casFeat_Confidence = jcas.getRequiredFeatureDE(casType, "Confidence", "uima.cas.Double", featOkTst);
     casFeatCode_Confidence  = (null == casFeat_Confidence) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Confidence).getCode();
 
   }
