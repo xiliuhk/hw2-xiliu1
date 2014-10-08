@@ -1,3 +1,4 @@
+package Type;
 
 
 /* First created by JCasGen Sat Oct 04 17:21:21 EDT 2014 */

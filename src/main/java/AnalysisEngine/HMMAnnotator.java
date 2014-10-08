@@ -1,3 +1,4 @@
+package AnalysisEngine;
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
@@ -7,6 +8,10 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+
+import Type.HMMPrediction;
+import Type.Sentence;
+
 import com.aliasi.util.AbstractExternalizable;
 import com.aliasi.chunk.*;
 /**

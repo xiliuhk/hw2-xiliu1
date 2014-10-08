@@ -3,26 +3,32 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="SentenceAnnotatorDescriptor">
+      <import name="descriptors.SentenceAnnotatorDescriptor"/>
+    </delegateAnalysisEngine>
     <delegateAnalysisEngine key="ABNERDescriptor">
       <import name="descriptors.ABNERDescriptor"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="HMMDescriptor">
       <import name="descriptors.HMMDescriptor"/>
     </delegateAnalysisEngine>
+		
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aeDescriptor</name>
     <description/>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters/>
+    <configurationParameters searchStrategy="language_fallback"/>
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
+      	<node>SentenceAnnotatorDescriptor</node>
         <node>ABNERDescriptor</node>
         <node>HMMDescriptor</node>
       </fixedFlow>
     </flowConstraints>
+    <typePriorities/>
     <fsIndexCollection/>
     <capabilities>
       <capability>

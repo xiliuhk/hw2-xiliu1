@@ -1,12 +1,15 @@
+package Type;
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 import java.util.regex.Pattern;
+
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+
 import abner.Tagger;
 public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 	private Tagger ABNERTagger = new Tagger();

@@ -1,3 +1,4 @@
+package casIO;
    
 import java.io.BufferedWriter;
 import java.io.File;
@@ -17,6 +18,9 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 import org.apache.uima.resource.metadata.ProcessingResourceMetaData;
 import org.apache.uima.util.ProcessTrace;
+
+import Type.Gene;
+import Type.Sentence;
 
 public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProcessor {
 
