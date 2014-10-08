@@ -16,7 +16,9 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	    inputfile = new File((String) getConfigParameterValue("InputFile"));
 	 }
 	
-	
+	/*
+	 * load input file from the hw2.in
+	 * */
 	@Override
 	public void getNext(CAS pCAS) throws IOException, CollectionException {
 		// TODO Auto-generated method stub
