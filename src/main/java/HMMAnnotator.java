@@ -24,9 +24,9 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
     System.out.println("HMMAnnotator");
     File chunkerFile = new File("src/main/resources/data/ne-en-bio-genetag.HmmChunker");
     // HMM chunker to identify gene mentions
-    NBestChunker HMMchunker;
+    Chunker HMMchunker;
     try {
-      HMMchunker = (NBestChunker) AbstractExternalizable.readObject(chunkerFile);
+      HMMchunker = (Chunker) AbstractExternalizable.readObject(chunkerFile);
       FSIterator<Annotation> iterator = pJCas.getAnnotationIndex(Sentence.type).iterator();
       while (iterator.hasNext()) {
         Sentence senTag = (Sentence) iterator.next();
@@ -35,12 +35,12 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
         Set<Chunk> chunkSet = chunking.chunkSet();
         for (Chunk chunk : chunkSet) {
           if (chunk != null) {
-            Gene gene = new Gene(pJCas);
-            gene.setSource(senTag.getSource());
+            HMMPrediction gene = new HMMPrediction(pJCas);
+            gene.setSentenceID(senTag.getSource());
             gene.setBegin(chunk.start());
             gene.setEnd(chunk.end());
-            gene.setContent(content.substring(chunk.start(), chunk.end()));
-            gene.setConfidence(chunk.score());
+            gene.setGeneTag(content.substring(chunk.start(), chunk.end()));
+            gene.setScore(chunk.score());
             gene.addToIndexes();
           }
         }

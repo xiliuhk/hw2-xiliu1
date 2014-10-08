@@ -13,7 +13,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Mon Oct 06 23:27:10 EDT 2014
+ * Updated by JCasGen Wed Oct 08 08:45:31 EDT 2014
  * @generated */
 public class Gene_Type extends Annotation_Type {
   /** @generated 
@@ -116,6 +116,30 @@ public class Gene_Type extends Annotation_Type {
     ll_cas.ll_setDoubleValue(addr, casFeatCode_Confidence, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_ProcessedId;
+  /** @generated */
+  final int     casFeatCode_ProcessedId;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getProcessedId(int addr) {
+        if (featOkTst && casFeat_ProcessedId == null)
+      jcas.throwFeatMissing("ProcessedId", "Gene");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_ProcessedId);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setProcessedId(int addr, String v) {
+        if (featOkTst && casFeat_ProcessedId == null)
+      jcas.throwFeatMissing("ProcessedId", "Gene");
+    ll_cas.ll_setStringValue(addr, casFeatCode_ProcessedId, v);}
+    
+  
 
 
 
@@ -139,6 +163,10 @@ public class Gene_Type extends Annotation_Type {
  
     casFeat_Confidence = jcas.getRequiredFeatureDE(casType, "Confidence", "uima.cas.Double", featOkTst);
     casFeatCode_Confidence  = (null == casFeat_Confidence) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Confidence).getCode();
+
+ 
+    casFeat_ProcessedId = jcas.getRequiredFeatureDE(casType, "ProcessedId", "uima.cas.String", featOkTst);
+    casFeatCode_ProcessedId  = (null == casFeat_ProcessedId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_ProcessedId).getCode();
 
   }
 }

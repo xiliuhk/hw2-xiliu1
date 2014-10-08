@@ -10,7 +10,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Mon Oct 06 23:27:10 EDT 2014
+ * Updated by JCasGen Wed Oct 08 08:45:31 EDT 2014
  * XML source: /Users/laceyliu/Documents/workspace/hw2-xiliu1/src/main/resources/descriptors/typeSystemDescriptor.xml
  * @generated */
 public class Sentence extends Annotation {

@@ -42,6 +42,11 @@
           <description/>
           <rangeTypeName>uima.cas.Double</rangeTypeName>
         </featureDescription>
+      <featureDescription>
+          <name>ProcessedId</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
   <typeDescription>

@@ -10,7 +10,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Mon Oct 06 23:27:10 EDT 2014
+ * Updated by JCasGen Wed Oct 08 08:45:31 EDT 2014
  * XML source: /Users/laceyliu/Documents/workspace/hw2-xiliu1/src/main/resources/descriptors/typeSystemDescriptor.xml
  * @generated */
 public class Gene extends Annotation {
@@ -139,6 +139,28 @@ public class Gene extends Annotation {
     if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_Confidence == null)
       jcasType.jcas.throwFeatMissing("Confidence", "Gene");
     jcasType.ll_cas.ll_setDoubleValue(addr, ((Gene_Type)jcasType).casFeatCode_Confidence, v);}    
+   
+    
+  //*--------------*
+  //* Feature: ProcessedId
+
+  /** getter for ProcessedId - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public String getProcessedId() {
+    if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_ProcessedId == null)
+      jcasType.jcas.throwFeatMissing("ProcessedId", "Gene");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Gene_Type)jcasType).casFeatCode_ProcessedId);}
+    
+  /** setter for ProcessedId - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setProcessedId(String v) {
+    if (Gene_Type.featOkTst && ((Gene_Type)jcasType).casFeat_ProcessedId == null)
+      jcasType.jcas.throwFeatMissing("ProcessedId", "Gene");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Gene_Type)jcasType).casFeatCode_ProcessedId, v);}    
   }
 
     
