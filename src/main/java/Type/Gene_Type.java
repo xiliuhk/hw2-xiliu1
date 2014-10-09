@@ -1,6 +1,6 @@
 package Type;
 
-/* First created by JCasGen Sat Oct 04 17:21:21 EDT 2014 */
+/* First created by JCasGen Thu Oct 09 10:45:51 EDT 2014 */
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Wed Oct 08 08:45:31 EDT 2014
+ * Updated by JCasGen Thu Oct 09 10:47:20 EDT 2014
  * @generated */
 public class Gene_Type extends Annotation_Type {
   /** @generated 

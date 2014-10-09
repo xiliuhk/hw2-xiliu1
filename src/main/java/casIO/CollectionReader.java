@@ -11,21 +11,24 @@ import org.apache.uima.util.Progress;
 
 public class CollectionReader extends CollectionReader_ImplBase {
 	private File inputfile;
-	
-	private boolean isFirst = true;
+	@Override
+	/*
+	 * Load input file from hw2.in
+	 * */
 	public void initialize() {
 	    inputfile = new File((String) getConfigParameterValue("InputFile"));
 	 }
 	
 	/*
-	 * load input file from the hw2.in
+	 * S1. convert input into a string
+	 * S3. store string as cas document
 	 * */
 	@Override
-	public void getNext(CAS pCAS) throws IOException, CollectionException {
+	public void getNext(CAS aCAS) throws IOException, CollectionException {
 		// TODO Auto-generated method stub
 		JCas jcas;
 		try{
-			jcas =pCAS.getJCas();
+			jcas =aCAS.getJCas();
 		}catch (Exception e){
 			throw new CollectionException(e);
 		}
@@ -37,10 +40,6 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	@Override
 	public boolean hasNext() throws IOException, CollectionException {
 		// TODO Auto-generated method stub
-		if(isFirst){
-			isFirst=false;
-			return true;
-		}
 		return false;
 	}
 

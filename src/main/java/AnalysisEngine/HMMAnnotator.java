@@ -26,7 +26,7 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
    * objects to CAS exception: AnalysisEngineProcessException
    */
   public void process(JCas pJCas) throws AnalysisEngineProcessException {
-    System.out.println("HMMAnnotator");
+    System.out.println("HMMAnnotator started! \n");
     String modelPath = "/data/HMM.HmmChunker";
     // HMM chunker to identify gene mentions
     Chunker HMMchunker;
@@ -56,6 +56,7 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
     } catch (ClassNotFoundException e) {
       e.printStackTrace();
     }
+    System.out.println("HMMAnnotator finished! \n");
 
   }
 }

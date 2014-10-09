@@ -1,4 +1,4 @@
-package Type;
+package AnalysisEngine;
 import java.io.File;
 import java.io.IOException;
 import java.util.Set;
@@ -10,6 +10,8 @@ import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 
+import Type.ABNERPrediction;
+import Type.Sentence;
 import abner.Tagger;
 public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 	private Tagger ABNERTagger = new Tagger();

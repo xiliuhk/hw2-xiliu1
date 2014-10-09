@@ -30,6 +30,7 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
 	/**
 	   * Initialize output file.
 	   */
+	  @Override
 	  public void initialize() throws ResourceInitializationException {
 	    try {
 	      String outfilePath = (String) getUimaContext().getConfigParameterValue("OutputFile");
