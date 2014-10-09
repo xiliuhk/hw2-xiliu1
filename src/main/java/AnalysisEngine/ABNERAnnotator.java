@@ -4,19 +4,30 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.apache.uima.resource.ResourceInitializationException;
 
+//ßimport edu.cmu.deiis.analysisEngine.Abner;
 import Type.ABNERPrediction;
 import Type.Sentence;
 import abner.Tagger;
 public class ABNERAnnotator extends JCasAnnotator_ImplBase{
-	private Tagger ABNERTagger = new Tagger();
+	private Tagger ABNERTagger;
+	
+	@Override
+	public void initialize(UimaContext aContext) throws ResourceInitializationException {
+	    super.initialize(aContext);
+	    ABNERTagger = new Tagger();
+	    System.out.println("ABNERTagger initialized!");
+	  }
 	@Override
 	public void process(JCas pJCas) throws AnalysisEngineProcessException {
+		System.out.println("ABNERAnnotator started!");
 		FSIterator<Annotation> iterator = pJCas.getAnnotationIndex(Sentence.type).iterator();
 	    try{
 	    	while (iterator.hasNext()) {
@@ -40,6 +51,7 @@ public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 	    }catch (Exception e) {
 	        e.printStackTrace();
 	    } 
+	    System.out.println("ABNERAnnotator finished! \n");
 	}
 
 }
