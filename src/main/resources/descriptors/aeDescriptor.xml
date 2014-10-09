@@ -4,15 +4,18 @@
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
     <delegateAnalysisEngine key="SentenceAnnotatorDescriptor">
-      <import name="descriptors.SentenceAnnotatorDescriptor"/>
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="ABNERDescriptor">
-      <import name="descriptors.ABNERDescriptor"/>
+      <import location="SentenceAnnotatorDescriptor.xml"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="HMMDescriptor">
-      <import name="descriptors.HMMDescriptor"/>
+      <import location="HMMDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ABNERDescriptor">
+      <import location="ABNERDescriptor.xml"/>
     </delegateAnalysisEngine>
 		
+  <delegateAnalysisEngine key="FinalDescriptor">
+      <import location="FinalDescriptor.xml"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aeDescriptor</name>
@@ -24,8 +27,9 @@
     <flowConstraints>
       <fixedFlow>
       	<node>SentenceAnnotatorDescriptor</node>
-        <node>ABNERDescriptor</node>
         <node>HMMDescriptor</node>
+        <node>ABNERDescriptor</node>
+      <node>FinalDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>

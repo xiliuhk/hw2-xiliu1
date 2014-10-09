@@ -27,11 +27,11 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
    */
   public void process(JCas pJCas) throws AnalysisEngineProcessException {
     System.out.println("HMMAnnotator");
-    File chunkerFile = new File("src/main/resources/data/ne-en-bio-genetag.HmmChunker");
+    String modelPath = "/data/HMM.HmmChunker";
     // HMM chunker to identify gene mentions
     Chunker HMMchunker;
     try {
-      HMMchunker = (Chunker) AbstractExternalizable.readObject(chunkerFile);
+      HMMchunker = (Chunker) AbstractExternalizable.readResourceObject(modelPath);
       FSIterator<Annotation> iterator = pJCas.getAnnotationIndex(Sentence.type).iterator();
       while (iterator.hasNext()) {
         Sentence senTag = (Sentence) iterator.next();
