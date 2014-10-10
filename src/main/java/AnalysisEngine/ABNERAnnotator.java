@@ -27,23 +27,26 @@ public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 
 	public void process(JCas pJCas) throws AnalysisEngineProcessException {
 		System.out.println("ABNERAnnotator started!");
-	/*
+	
 		FSIterator<Annotation> iterator = pJCas.getAnnotationIndex(Sentence.type).iterator();
 	    try{
 	    	while (iterator.hasNext()) {
-		    	  Sentence senTag=(Sentence) iterator.next();
-		    	  String content = senTag.getContent();
-		    	  String taggedContent = ABNERTagger.tagABNER(content);
-		    	  String[] taggedSegs = taggedContent.split("  ");
-		    	  for (String seg:taggedSegs){
-		    		  String segContent = seg.split("|")[0];
-		    		  String segTag = seg.split("|")[1];
+		    	  Sentence curSentence=(Sentence) iterator.next();
+		    	  String content = curSentence.getContent();
+		    	  String[][] taggedContent = ABNERTagger.getEntities(content);
+		    	 // String[] taggedSegs = taggedContent.split("  ");
+		    	  for (String segTag:taggedContent[0]){
+		    		  String tagSource = curSentence.getSource();
+		    		  //String segContent = segTag;
+		    		 // System.out.println("Gene: "+segTag);
+		    		  //String segTag = seg.split("|")[1];
+		    		  //System.out.println("Type: "+segTag);
 		    		  if (Pattern.matches("[0-9a-zA-Z-\\s]+", segTag)&&(segTag.contains("-DNA")||segTag.contains("-RNA")|| segTag.contains("-Protein"))){
 		    			  ABNERPrediction gene = new ABNERPrediction(pJCas);
-		    			  gene.setSentenceID(senTag.getSource());
-		    			  gene.setGeneTag(segContent);
+		    			  gene.setSentenceID(tagSource);
+		    			  gene.setGeneTag(segTag);
 		    			  gene.setScore(-1);
-		    			  gene.addToIndexes();
+		    			  gene.addToIndexes(pJCas);
 		    		  }
 		    	  }
 		      }
@@ -51,7 +54,7 @@ public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 	    }catch (Exception e) {
 	        e.printStackTrace();
 	    } 
-	    */
+	    
 	    System.out.println("ABNERAnnotator finished! \n");
 	}
 

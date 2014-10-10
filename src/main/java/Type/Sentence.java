@@ -1,8 +1,7 @@
 package Type;
 
 
-
-/* First created by JCasGen Fri Oct 10 00:49:29 EDT 2014 */
+/* First created by JCasGen Fri Oct 10 10:47:09 EDT 2014 */
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
@@ -12,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Fri Oct 10 00:49:29 EDT 2014
+ * Updated by JCasGen Fri Oct 10 11:22:04 EDT 2014
  * XML source: /Users/laceyliu/Documents/workspace/hw2-xiliu1/src/main/resources/descriptors/typeSystemDescriptor.xml
  * @generated */
 public class Sentence extends Annotation {
@@ -86,7 +85,7 @@ public class Sentence extends Annotation {
    */
   public String getSource() {
     if (Sentence_Type.featOkTst && ((Sentence_Type)jcasType).casFeat_Source == null)
-      jcasType.jcas.throwFeatMissing("Source", "Sentence");
+      jcasType.jcas.throwFeatMissing("Source", "Type.Sentence");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Sentence_Type)jcasType).casFeatCode_Source);}
     
   /** setter for Source - sets  
@@ -95,7 +94,7 @@ public class Sentence extends Annotation {
    */
   public void setSource(String v) {
     if (Sentence_Type.featOkTst && ((Sentence_Type)jcasType).casFeat_Source == null)
-      jcasType.jcas.throwFeatMissing("Source", "Sentence");
+      jcasType.jcas.throwFeatMissing("Source", "Type.Sentence");
     jcasType.ll_cas.ll_setStringValue(addr, ((Sentence_Type)jcasType).casFeatCode_Source, v);}    
    
     
@@ -108,7 +107,7 @@ public class Sentence extends Annotation {
    */
   public String getContent() {
     if (Sentence_Type.featOkTst && ((Sentence_Type)jcasType).casFeat_Content == null)
-      jcasType.jcas.throwFeatMissing("Content", "Sentence");
+      jcasType.jcas.throwFeatMissing("Content", "Type.Sentence");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Sentence_Type)jcasType).casFeatCode_Content);}
     
   /** setter for Content - sets  
@@ -117,7 +116,7 @@ public class Sentence extends Annotation {
    */
   public void setContent(String v) {
     if (Sentence_Type.featOkTst && ((Sentence_Type)jcasType).casFeat_Content == null)
-      jcasType.jcas.throwFeatMissing("Content", "Sentence");
+      jcasType.jcas.throwFeatMissing("Content", "Type.Sentence");
     jcasType.ll_cas.ll_setStringValue(addr, ((Sentence_Type)jcasType).casFeatCode_Content, v);}    
   }
 

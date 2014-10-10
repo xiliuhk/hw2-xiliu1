@@ -1,7 +1,6 @@
 package Type;
 
-
-/* First created by JCasGen Fri Oct 10 00:49:29 EDT 2014 */
+/* First created by JCasGen Fri Oct 10 10:47:09 EDT 2014 */
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -15,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Fri Oct 10 00:49:29 EDT 2014
+ * Updated by JCasGen Fri Oct 10 11:22:04 EDT 2014
  * @generated */
 public class Sentence_Type extends Annotation_Type {
   /** @generated 
@@ -45,7 +44,7 @@ public class Sentence_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("Sentence");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("Type.Sentence");
  
   /** @generated */
   final Feature casFeat_Source;
@@ -57,7 +56,7 @@ public class Sentence_Type extends Annotation_Type {
    */ 
   public String getSource(int addr) {
         if (featOkTst && casFeat_Source == null)
-      jcas.throwFeatMissing("Source", "Sentence");
+      jcas.throwFeatMissing("Source", "Type.Sentence");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Source);
   }
   /** @generated
@@ -66,7 +65,7 @@ public class Sentence_Type extends Annotation_Type {
    */    
   public void setSource(int addr, String v) {
         if (featOkTst && casFeat_Source == null)
-      jcas.throwFeatMissing("Source", "Sentence");
+      jcas.throwFeatMissing("Source", "Type.Sentence");
     ll_cas.ll_setStringValue(addr, casFeatCode_Source, v);}
     
   
@@ -81,7 +80,7 @@ public class Sentence_Type extends Annotation_Type {
    */ 
   public String getContent(int addr) {
         if (featOkTst && casFeat_Content == null)
-      jcas.throwFeatMissing("Content", "Sentence");
+      jcas.throwFeatMissing("Content", "Type.Sentence");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Content);
   }
   /** @generated
@@ -90,7 +89,7 @@ public class Sentence_Type extends Annotation_Type {
    */    
   public void setContent(int addr, String v) {
         if (featOkTst && casFeat_Content == null)
-      jcas.throwFeatMissing("Content", "Sentence");
+      jcas.throwFeatMissing("Content", "Type.Sentence");
     ll_cas.ll_setStringValue(addr, casFeatCode_Content, v);}
     
   

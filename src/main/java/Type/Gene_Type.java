@@ -1,7 +1,6 @@
 package Type;
 
-
-/* First created by JCasGen Fri Oct 10 00:49:29 EDT 2014 */
+/* First created by JCasGen Fri Oct 10 10:47:09 EDT 2014 */
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -15,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Fri Oct 10 00:49:29 EDT 2014
+ * Updated by JCasGen Fri Oct 10 11:22:04 EDT 2014
  * @generated */
 public class Gene_Type extends Annotation_Type {
   /** @generated 
@@ -45,7 +44,7 @@ public class Gene_Type extends Annotation_Type {
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("Gene");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("Type.Gene");
  
   /** @generated */
   final Feature casFeat_Source;
@@ -57,7 +56,7 @@ public class Gene_Type extends Annotation_Type {
    */ 
   public String getSource(int addr) {
         if (featOkTst && casFeat_Source == null)
-      jcas.throwFeatMissing("Source", "Gene");
+      jcas.throwFeatMissing("Source", "Type.Gene");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Source);
   }
   /** @generated
@@ -66,7 +65,7 @@ public class Gene_Type extends Annotation_Type {
    */    
   public void setSource(int addr, String v) {
         if (featOkTst && casFeat_Source == null)
-      jcas.throwFeatMissing("Source", "Gene");
+      jcas.throwFeatMissing("Source", "Type.Gene");
     ll_cas.ll_setStringValue(addr, casFeatCode_Source, v);}
     
   
@@ -81,7 +80,7 @@ public class Gene_Type extends Annotation_Type {
    */ 
   public String getContent(int addr) {
         if (featOkTst && casFeat_Content == null)
-      jcas.throwFeatMissing("Content", "Gene");
+      jcas.throwFeatMissing("Content", "Type.Gene");
     return ll_cas.ll_getStringValue(addr, casFeatCode_Content);
   }
   /** @generated
@@ -90,7 +89,7 @@ public class Gene_Type extends Annotation_Type {
    */    
   public void setContent(int addr, String v) {
         if (featOkTst && casFeat_Content == null)
-      jcas.throwFeatMissing("Content", "Gene");
+      jcas.throwFeatMissing("Content", "Type.Gene");
     ll_cas.ll_setStringValue(addr, casFeatCode_Content, v);}
     
   
@@ -105,7 +104,7 @@ public class Gene_Type extends Annotation_Type {
    */ 
   public double getConfidence(int addr) {
         if (featOkTst && casFeat_Confidence == null)
-      jcas.throwFeatMissing("Confidence", "Gene");
+      jcas.throwFeatMissing("Confidence", "Type.Gene");
     return ll_cas.ll_getDoubleValue(addr, casFeatCode_Confidence);
   }
   /** @generated
@@ -114,7 +113,7 @@ public class Gene_Type extends Annotation_Type {
    */    
   public void setConfidence(int addr, double v) {
         if (featOkTst && casFeat_Confidence == null)
-      jcas.throwFeatMissing("Confidence", "Gene");
+      jcas.throwFeatMissing("Confidence", "Type.Gene");
     ll_cas.ll_setDoubleValue(addr, casFeatCode_Confidence, v);}
     
   
@@ -129,7 +128,7 @@ public class Gene_Type extends Annotation_Type {
    */ 
   public String getProcessedId(int addr) {
         if (featOkTst && casFeat_ProcessedId == null)
-      jcas.throwFeatMissing("ProcessedId", "Gene");
+      jcas.throwFeatMissing("ProcessedId", "Type.Gene");
     return ll_cas.ll_getStringValue(addr, casFeatCode_ProcessedId);
   }
   /** @generated
@@ -138,7 +137,7 @@ public class Gene_Type extends Annotation_Type {
    */    
   public void setProcessedId(int addr, String v) {
         if (featOkTst && casFeat_ProcessedId == null)
-      jcas.throwFeatMissing("ProcessedId", "Gene");
+      jcas.throwFeatMissing("ProcessedId", "Type.Gene");
     ll_cas.ll_setStringValue(addr, casFeatCode_ProcessedId, v);}
     
   

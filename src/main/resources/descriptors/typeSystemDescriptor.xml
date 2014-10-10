@@ -6,7 +6,7 @@
     <vendor/>
   <types>
     <typeDescription>
-      <name>Sentence</name>
+      <name>Type.Sentence</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
@@ -23,7 +23,7 @@
       </features>
     </typeDescription>
     <typeDescription>
-      <name>Gene</name>
+      <name>Type.Gene</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
@@ -50,7 +50,7 @@
       </features>
     </typeDescription>
   <typeDescription>
-      <name>HMMPrediction</name>
+      <name>Type.HMMPrediction</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
@@ -72,7 +72,7 @@
       </features>
     </typeDescription>
     <typeDescription>
-      <name>ABNERPrediction</name>
+      <name>Type.ABNERPrediction</name>
       <description/>
       <supertypeName>uima.tcas.Annotation</supertypeName>
       <features>
