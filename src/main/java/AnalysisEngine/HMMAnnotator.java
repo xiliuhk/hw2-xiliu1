@@ -47,7 +47,7 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 	 * words Step 3. convert the gene tags objects to CAS exception:
 	 * AnalysisEngineProcessException
 	 */
-	@Override
+
 	public void process(JCas pJCas) throws AnalysisEngineProcessException {
 		System.out.println("HMMAnnotator started! \n");
 		// String modelPath = "/data/HMM.HmmChunker";
