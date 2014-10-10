@@ -33,7 +33,9 @@
     <capabilities>
       <capability>
         <inputs/>
-        <outputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">uima.tcas.Annotation</type>
+        </outputs>
         <languagesSupported/>
       </capability>
     </capabilities>

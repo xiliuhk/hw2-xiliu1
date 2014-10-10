@@ -1,11 +1,8 @@
 package AnalysisEngine;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
@@ -14,13 +11,11 @@ import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
-
 import Type.HMMPrediction;
 import Type.Sentence;
-//import abner.Tagger;
-
+import com.aliasi.chunk.Chunk;
+import com.aliasi.chunk.ConfidenceChunker;
 import com.aliasi.util.AbstractExternalizable;
-import com.aliasi.chunk.*;
 
 /**
  * break the sentence into word tokens record the position and content of each
