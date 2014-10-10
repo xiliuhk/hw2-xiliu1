@@ -1,7 +1,8 @@
 package Type;
 
 
-/* First created by JCasGen Fri Oct 10 00:42:16 EDT 2014 */
+
+/* First created by JCasGen Fri Oct 10 00:49:29 EDT 2014 */
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
@@ -11,8 +12,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Fri Oct 10 00:42:16 EDT 2014
- * XML source: /Users/laceyliu/Documents/workspace/hw2-xiliu1/src/main/resources/descriptors/ABNERDescriptor.xml
+ * Updated by JCasGen Fri Oct 10 00:49:29 EDT 2014
+ * XML source: /Users/laceyliu/Documents/workspace/hw2-xiliu1/src/main/resources/descriptors/typeSystemDescriptor.xml
  * @generated */
 public class Sentence extends Annotation {
   /** @generated

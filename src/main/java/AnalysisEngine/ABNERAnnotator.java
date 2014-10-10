@@ -11,6 +11,7 @@ import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.apache.uima.resource.ResourceInitializationException;
+
 import Type.ABNERPrediction;
 import Type.Sentence;
 import abner.Tagger;
