@@ -1,7 +1,7 @@
 package Type;
 
 
-/* First created by JCasGen Thu Oct 09 10:45:51 EDT 2014 */
+/* First created by JCasGen Fri Oct 10 00:42:16 EDT 2014 */
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Thu Oct 09 10:47:20 EDT 2014
- * XML source: /Users/laceyliu/Documents/workspace/hw2-xiliu1/src/main/resources/descriptors/HMMDescriptor.xml
+ * Updated by JCasGen Fri Oct 10 00:42:16 EDT 2014
+ * XML source: /Users/laceyliu/Documents/workspace/hw2-xiliu1/src/main/resources/descriptors/ABNERDescriptor.xml
  * @generated */
 public class Gene extends Annotation {
   /** @generated
