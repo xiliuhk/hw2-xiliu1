@@ -17,6 +17,7 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	 * */
 	public void initialize() {
 	    inputfile = new File((String) getConfigParameterValue("InputFile"));
+	    System.out.println("CollectionReader initialized!");
 	 }
 	
 	/*
@@ -26,6 +27,7 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	@Override
 	public void getNext(CAS aCAS) throws IOException, CollectionException {
 		// TODO Auto-generated method stub
+		System.out.println("CollectionReader started!");
 		JCas jcas;
 		try{
 			jcas =aCAS.getJCas();
@@ -35,6 +37,7 @@ public class CollectionReader extends CollectionReader_ImplBase {
 		String text = "";
 		text = FileUtils.file2String(inputfile);
 		jcas.setDocumentText(text);
+		System.out.println("CollectionReader finished!");
 	}
 
 	@Override

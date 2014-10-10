@@ -12,8 +12,7 @@
     <delegateAnalysisEngine key="ABNERDescriptor">
       <import location="ABNERDescriptor.xml"/>
     </delegateAnalysisEngine>
-		
-  <delegateAnalysisEngine key="FinalDescriptor">
+    <delegateAnalysisEngine key="FinalDescriptor">
       <import location="FinalDescriptor.xml"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
@@ -22,17 +21,16 @@
     <description/>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters searchStrategy="language_fallback"/>
+    <configurationParameters/>
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
-      	<node>SentenceAnnotatorDescriptor</node>
+        <node>SentenceAnnotatorDescriptor</node>
         <node>HMMDescriptor</node>
         <node>ABNERDescriptor</node>
-      <node>FinalDescriptor</node>
+        <node>FinalDescriptor</node>
       </fixedFlow>
     </flowConstraints>
-    <typePriorities/>
     <fsIndexCollection/>
     <capabilities>
       <capability>

@@ -53,6 +53,7 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 		// String modelPath = "/data/HMM.HmmChunker";
 		// HMM chunker to identify gene mentions
 		//Chunker HMMchunker;
+		
 		try {
 			// HMMchunker = (Chunker)
 			// AbstractExternalizable.readResourceObject(modelPath);
@@ -80,6 +81,7 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		System.out.println("HMMAnnotator finished! \n");
 
 	}

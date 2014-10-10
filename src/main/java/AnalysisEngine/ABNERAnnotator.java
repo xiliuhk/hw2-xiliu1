@@ -18,7 +18,7 @@ import Type.Sentence;
 import abner.Tagger;
 public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 	private Tagger ABNERTagger;
-	
+
 	@Override
 	public void initialize(UimaContext aContext) throws ResourceInitializationException {
 	    super.initialize(aContext);
@@ -28,6 +28,7 @@ public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 
 	public void process(JCas pJCas) throws AnalysisEngineProcessException {
 		System.out.println("ABNERAnnotator started!");
+	/*
 		FSIterator<Annotation> iterator = pJCas.getAnnotationIndex(Sentence.type).iterator();
 	    try{
 	    	while (iterator.hasNext()) {
@@ -51,6 +52,7 @@ public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 	    }catch (Exception e) {
 	        e.printStackTrace();
 	    } 
+	    */
 	    System.out.println("ABNERAnnotator finished! \n");
 	}
 

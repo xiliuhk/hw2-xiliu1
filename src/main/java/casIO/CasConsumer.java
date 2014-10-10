@@ -40,10 +40,13 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
 	      throw new ResourceInitializationException(e);
 	    }
 	    SentenceIDmap = new HashMap<String, String>();
+	    System.out.println("CasConsumer initialized!");
 	  }
 
 	@Override
 	public void processCas(CAS aCAS) throws ResourceProcessException {
+		System.out.println("CasConsumer started!");
+		
 		JCas pJCas;
 	    try {
 	      pJCas = aCAS.getJCas();
@@ -78,6 +81,8 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
 	    } catch (IOException e) {
 	      e.printStackTrace();
 	    }
+
+	    System.out.println("CasConsumer finished!");
 
 	}
 	private int blankCount(String s) {
