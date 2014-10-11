@@ -55,8 +55,12 @@
     /**
      * Constructor for the class.
      * 
+     * @throws Exception
+     * 		fsfd
+     * 
      * @param args
      *          command line arguments into the program - see class description
+     * 
      */
     public CPERun(String args[]) throws Exception {
       mStartTime = System.currentTimeMillis();
@@ -107,6 +111,7 @@
      * 
      * @param args
      *          Command line arguments - see class description
+     * @throws Exception
      */
     public static void main(String[] args) throws Exception {
       new CPERun(args);
