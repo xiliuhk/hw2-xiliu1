@@ -60,9 +60,9 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
 	      FSIterator<Annotation> sentenceIterator = pJCas.getAnnotationIndex(Sentence.type).iterator();
 	      // hash the sentences by sourceID and put the content into map
 	      while (sentenceIterator.hasNext()) {
-	        Sentence SentenceTag = (Sentence) sentenceIterator.get();
+	        Sentence SentenceTag = (Sentence) sentenceIterator.next();
 	        SentenceIDmap.put(SentenceTag.getSource(), SentenceTag.getContent());
-	        sentenceIterator.moveToNext();
+	        //sentenceIterator.moveToNext();
 	      }
 	      FSIterator<Annotation> geneIterator = pJCas.getAnnotationIndex(Gene.type).iterator();
 	      // iterate the gene tags and find their positions
@@ -71,10 +71,10 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
 	        String sContent = SentenceIDmap.get(geneT.getSource());
 	        // calculate proper positions in sentence for each gene term
 	        String contentTemp = sContent.substring(0, geneT.getBegin());
-	        int countInSentence = blankCount(contentTemp);
-	        int countInContent = blankCount(sContent.substring(geneT.getBegin(), geneT.getEnd()));
-	        int start = geneT.getBegin() - countInSentence;
-	        int end = geneT.getEnd() - countInSentence - countInContent - 1;
+	        //int countInSentence = blankCount(contentTemp);
+	        //int countInContent = blankCount(sContent.substring(geneT.getBegin(), geneT.getEnd()));
+	        int start = geneT.getBegin();
+	        int end = geneT.getEnd();
 	        bufferedWriter.write(geneT.getSource() + "|" + start + " " + end + "|" + geneT.getContent()
 	                + "\n");
 	      }
@@ -85,6 +85,7 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
 	    System.out.println("CasConsumer finished!");
 
 	}
+	/*
 	private int blankCount(String s) {
 		    int count = 0;
 		    for (int i = 0; i < s.length(); i++) {
@@ -94,5 +95,6 @@ public class CasConsumer extends CasConsumer_ImplBase implements CasObjectProces
 		    }
 		    return count;
 	}
+	*/
 
 }

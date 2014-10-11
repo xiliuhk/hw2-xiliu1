@@ -50,6 +50,8 @@ public class FinalAnnotator extends JCasAnnotator_ImplBase {
 
 			} else {
 				double confidence = HMMPredict.getScore();
+				int start = HMMPredict.getBegin();
+				int end = HMMPredict.getEnd();
 				// double Confidence = Math.pow(2, Score);
 				// System.out.println("Disagree: " + SentenceID + "|" + GeneTag
 				// + "|" + confidence);
@@ -57,6 +59,8 @@ public class FinalAnnotator extends JCasAnnotator_ImplBase {
 					Gene gene = new Gene(aJCas);
 					gene.setSource(SentenceID);
 					gene.setContent(GeneTag);
+					gene.setBegin(start);
+					gene.setEnd(end);
 					gene.addToIndexes(aJCas);
 				}
 				// System.out.println("Picked!");

@@ -68,7 +68,8 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 				 */
 				List<String> geneTags = new ArrayList<String>();
 				List<Double> confidences = new ArrayList<Double>();
-
+				List<Integer> startIndexes = new ArrayList<Integer>();
+				List<Integer> endIndexes = new ArrayList<Integer>();
 				Iterator<Chunk> nBestIterator = this.HMMchunker.nBestChunks(
 						content.toCharArray(), 0, content.toCharArray().length,
 						5);
@@ -78,6 +79,8 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 					String geneTag;
 					double confidence = Math.pow(2.0, temp.score());
 					// if (confidence>=0.6){
+					startIndexes.add(temp.start());
+					endIndexes.add(temp.end());
 					geneTag = content.substring(temp.start(), temp.end());
 					geneTags.add(geneTag);
 					confidences.add(confidence);
@@ -88,6 +91,8 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 					gene.setSentenceID(sentenceID);
 					gene.setGeneTag(geneTags.get(i));
 					gene.setScore(confidences.get(i));
+					gene.setBegin(content.indexOf(geneTags.get(i)));
+					gene.setEnd(content.indexOf(geneTags.get(i))+endIndexes.get(i));
 					gene.addToIndexes();
 					// System.out.println(gene.getSentenceID()+"|"+gene.getGeneTag()+"|"+gene.getScore());
 				}

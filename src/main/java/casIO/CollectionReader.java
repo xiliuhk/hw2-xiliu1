@@ -1,6 +1,7 @@
 package casIO;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.uima.cas.CAS;
 import org.apache.uima.collection.CollectionException;
@@ -11,13 +12,14 @@ import org.apache.uima.util.Progress;
 
 public class CollectionReader extends CollectionReader_ImplBase {
 	private File inputfile;
+	
 	@Override
 	/*
 	 * Load input file from hw2.in
 	 * */
 	public void initialize() {
-	    inputfile = new File((String) getConfigParameterValue("InputFile"));
-	    System.out.println("CollectionReader initialized!");
+		inputfile = new File(((String) getConfigParameterValue("InputFile")).trim());
+		System.out.println("CollectionReader initialized!");
 	 }
 	
 	/*
@@ -28,13 +30,13 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	public void getNext(CAS aCAS) throws IOException, CollectionException {
 		// TODO Auto-generated method stub
 		System.out.println("CollectionReader started!");
-		JCas jcas;
+		JCas jcas = null;
 		try{
 			jcas =aCAS.getJCas();
 		}catch (Exception e){
-			throw new CollectionException(e);
+			e.getStackTrace();
 		}
-		String text = "";
+		String text = ""; 
 		text = FileUtils.file2String(inputfile);
 		jcas.setDocumentText(text);
 		System.out.println("CollectionReader finished!");
@@ -43,7 +45,7 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	@Override
 	public boolean hasNext() throws IOException, CollectionException {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
