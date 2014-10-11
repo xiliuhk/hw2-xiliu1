@@ -27,6 +27,7 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	public void initialize() {
 		inputfile = new File(((String) getConfigParameterValue("InputFile")).trim());
 		System.out.println("CollectionReader initialized!");
+		System.out.println("-___________________-");
 		isFirst = true;
 	 }
 	
