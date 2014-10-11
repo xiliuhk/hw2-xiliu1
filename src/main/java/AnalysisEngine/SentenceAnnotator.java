@@ -27,7 +27,7 @@ public class SentenceAnnotator extends JCasAnnotator_ImplBase {
 	 * convert string to CAS exception: AnalysisEngineProcessException
 	 */
 	public void process(JCas aJCas) {
-		System.out.println("Sentence Annotator started! \n");
+		//System.out.println("Sentence Annotator started! \n");
 		
 		try {
 			String text = aJCas.getDocumentText();

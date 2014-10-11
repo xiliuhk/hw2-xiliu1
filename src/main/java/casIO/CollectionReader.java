@@ -10,9 +10,16 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.util.FileUtils;
 import org.apache.uima.util.Progress;
 
+
+/**
+ * 
+ * This class is mainly used to read row data into UIMA
+ * @author laceyliu
+ *
+ */
 public class CollectionReader extends CollectionReader_ImplBase {
 	private File inputfile;
-	
+	private  boolean isFirst;
 	@Override
 	/*
 	 * Load input file from hw2.in
@@ -20,6 +27,7 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	public void initialize() {
 		inputfile = new File(((String) getConfigParameterValue("InputFile")).trim());
 		System.out.println("CollectionReader initialized!");
+		isFirst = true;
 	 }
 	
 	/*
@@ -45,7 +53,11 @@ public class CollectionReader extends CollectionReader_ImplBase {
 	@Override
 	public boolean hasNext() throws IOException, CollectionException {
 		// TODO Auto-generated method stub
-		return true;
+		if(isFirst){
+			isFirst = false;
+			return true;
+		}
+		return false;	
 	}
 
 	@Override

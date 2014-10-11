@@ -15,6 +15,11 @@ import Type.ABNERPrediction;
 import Type.Gene;
 import Type.HMMPrediction;
 
+/**
+ * Combination phase
+ * @author laceyliu
+ *
+ */
 public class FinalAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
@@ -28,7 +33,7 @@ public class FinalAnnotator extends JCasAnnotator_ImplBase {
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		// TODO Auto-generated method stub
 		// initialize the ABNER Dictionary
-		System.out.println("FinalAnnotator started!");
+		//System.out.println("FinalAnnotator started!");
 
 		this.ABNERDictionary = HashABNERPredictions(aJCas);
 		FSIterator<Annotation> iterator = aJCas.getAnnotationIndex(
@@ -37,7 +42,6 @@ public class FinalAnnotator extends JCasAnnotator_ImplBase {
 			HMMPrediction HMMPredict = (HMMPrediction) iterator.next();
 			String SentenceID = HMMPredict.getSentenceID();
 			String GeneTag = HMMPredict.getGeneTag();
-			// System.out.println("ID: "+SentenceID+"	Gene: "+GeneTag);
 			if (ABNERDictionary.containsKey(SentenceID)) {
 				HashSet<String> geneSet = ABNERDictionary.get(SentenceID);
 				if (geneSet.contains(GeneTag)) {

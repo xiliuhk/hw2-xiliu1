@@ -31,8 +31,10 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 		super.initialize(aContext);
 		String modelPath = "/data/HMM.HmmChunker";
 		try {
-			HMMchunker = (ConfidenceChunker) AbstractExternalizable
-					.readResourceObject(modelPath);
+//			HMMchunker = (ConfidenceChunker) AbstractExternalizable
+//					.readResourceObject(modelPath);\
+			System.out.println((String) aContext.getConfigParameterValue("model"));
+			HMMchunker = (ConfidenceChunker)AbstractExternalizable.readResourceObject(HMMAnnotator.class, (String) aContext.getConfigParameterValue("model"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -47,10 +49,7 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 	 */
 
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
-		System.out.println("HMMAnnotator started! \n");
-		// String modelPath = "/data/HMM.HmmChunker";
-		// HMM chunker to identify gene mentions
-		// Chunker HMMchunker;
+	//	System.out.println("HMMAnnotator started! \n");
 
 		try {
 			// HMMchunker = (Chunker)
@@ -78,24 +77,31 @@ public class HMMAnnotator extends JCasAnnotator_ImplBase {
 					Chunk temp = (Chunk) nBestIterator.next();
 					String geneTag;
 					double confidence = Math.pow(2.0, temp.score());
-					// if (confidence>=0.6){
-					startIndexes.add(temp.start());
-					endIndexes.add(temp.end());
-					geneTag = content.substring(temp.start(), temp.end());
-					geneTags.add(geneTag);
-					confidences.add(confidence);
-					// }
-				}
-				for (int i = 0; i < geneTags.size(); i++) {
 					HMMPrediction gene = new HMMPrediction(aJCas);
 					gene.setSentenceID(sentenceID);
-					gene.setGeneTag(geneTags.get(i));
-					gene.setScore(confidences.get(i));
-					gene.setBegin(content.indexOf(geneTags.get(i)));
-					gene.setEnd(content.indexOf(geneTags.get(i))+endIndexes.get(i));
+					gene.setGeneTag(content.substring(temp.start(), temp.end()));
+					gene.setBegin(temp.start());
+					gene.setEnd(temp.end());
+					gene.setScore(confidence);
 					gene.addToIndexes();
-					// System.out.println(gene.getSentenceID()+"|"+gene.getGeneTag()+"|"+gene.getScore());
+					// if (confidence>=0.6){
+//					startIndexes.add(temp.start());
+//					endIndexes.add(temp.end());
+//					geneTag = content.substring(temp.start(), temp.end());
+//					geneTags.add(geneTag);
+//					confidences.add(confidence);
+					// }
 				}
+//				for (int i = 0; i < geneTags.size(); i++) {
+//					HMMPrediction gene = new HMMPrediction(aJCas);
+//					gene.setSentenceID(sentenceID);
+//					gene.setGeneTag(geneTags.get(i));
+//					gene.setScore(confidences.get(i));
+//					gene.setBegin(content.indexOf(geneTags.get(i)));
+//					gene.setEnd(content.indexOf(geneTags.get(i))+endIndexes.get(i));
+//					gene.addToIndexes();
+//					// System.out.println(gene.getSentenceID()+"|"+gene.getGeneTag()+"|"+gene.getScore());
+//				}
 
 				/*
 				 * Set<Chunk> chunkSet = chunking.chunkSet(); for (Chunk chunk :

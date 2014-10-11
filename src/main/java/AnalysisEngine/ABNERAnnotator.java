@@ -26,7 +26,7 @@ public class ABNERAnnotator extends JCasAnnotator_ImplBase{
 	  }
 
 	public void process(JCas pJCas) throws AnalysisEngineProcessException {
-		System.out.println("ABNERAnnotator started!");
+		//System.out.println("ABNERAnnotator started!");
 	
 		FSIterator<Annotation> iterator = pJCas.getAnnotationIndex(Sentence.type).iterator();
 	    try{
