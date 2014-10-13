@@ -67,10 +67,6 @@ public class FinalAnnotator extends JCasAnnotator_ImplBase {
 					gene.setEnd(end);
 					gene.addToIndexes(aJCas);
 				}
-				// System.out.println("Picked!");
-				// } else {
-				// System.out.println("Not picked!");
-				// }Í
 			}
 		}
 		System.out.println("FinalAnnotator finished! \n");
